@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: John Doe
+  experience: Rookie
+  pending_tasks_count: 0
+  next_urgent_task: ""
