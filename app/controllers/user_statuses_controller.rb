@@ -10,8 +10,13 @@ class UserStatusesController < ApplicationController
     pending_tasks_count = @todos.count { |todo| todo['completed'] == false }
     next_urgent_task = @todos.find { |todo| todo['completed'] == false }&.dig('todo') || ''
 
-    @user_status = UserStatus.create(full_name: full_name, experience: experience, pending_tasks_count: pending_tasks_count, next_urgent_task: next_urgent_task)
-    render json: @user_status.as_json
+    @user_status = UserStatus.new(full_name: full_name, experience: experience, pending_tasks_count: pending_tasks_count, next_urgent_task: next_urgent_task)
+
+    if @user_status.save
+      render json: @user_status.as_json, status: :ok
+    else
+      render json: { errors: @user_status.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   private
