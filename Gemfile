@@ -33,7 +33,7 @@ gem "httparty"
 
 group :development, :test do
   # Rails 7.2 no es compatible con Minitest 6; fijar a 5.x evita el error en line_filtering
-  gem "minitest", "~> 5.27"
+  gem "minitest", "~> 6.0"
 
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
