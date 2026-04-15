@@ -131,7 +131,9 @@ GEM
     mcp (0.8.0)
       json-schema (>= 4.1)
     mini_mime (1.1.5)
-    minitest (5.27.0)
+    minitest (6.0.4)
+      drb (~> 2.0)
+      prism (~> 1.5)
     msgpack (1.8.0)
     multi_xml (0.8.1)
       bigdecimal (>= 3.1, < 5)
@@ -294,7 +296,7 @@ DEPENDENCIES
   brakeman
   debug
   httparty
-  minitest (~> 5.27)
+  minitest (~> 6.0)
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.2.3)
